@@ -48,12 +48,16 @@ public sealed class InspectorPropertyDescriptorProviderTests
 
 		Assert.IsTrue( descriptors.Any( x => x.Name == nameof( PropertyAttributeTestComponent.VisibleValue ) ) );
 		Assert.IsFalse( descriptors.Any( x => x.Name == nameof( PropertyAttributeTestComponent.HiddenValue ) ) );
+		Assert.IsFalse( descriptors.Any( x => x.Name == nameof( PropertyAttributeTestComponent.OnComponentStart ) ) );
 	}
 
 	private sealed class PropertyAttributeTestComponent : Component
 	{
 		[Property]
 		public float VisibleValue { get; set; }
+
+		[Property]
+		public System.Action? OnComponentStart { get; set; }
 
 		public float HiddenValue { get; set; }
 	}
