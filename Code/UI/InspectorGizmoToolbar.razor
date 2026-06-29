@@ -1,0 +1,13 @@
+@namespace Inspector.UI
+@using Inspector
+@inherits Panel
+
+<root class="inspector-gizmo-toolbar">
+	@foreach ( var mode in Modes )
+	{
+		<button class="inspector-gizmo-toolbar__button @(Service.GizmoMode == mode ? "is-active" : "")" @onclick="@(() => Service.SetGizmoMode( mode ))">
+			<i>@IconFor( mode )</i>
+			<span>@LabelFor( mode )</span>
+		</button>
+	}
+</root>

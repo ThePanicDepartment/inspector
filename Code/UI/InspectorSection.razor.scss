@@ -1,0 +1,43 @@
+.inspector-section {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 8px;
+	background-color: rgba( 255, 255, 255, 0.07 );
+	border: 1px solid rgba( 210, 225, 245, 0.12 );
+	border-radius: 8px;
+	overflow: hidden;
+
+	&__header {
+		height: 43px;
+		display: flex;
+		align-items: center;
+		gap: 9px;
+		padding: 0 12px;
+	}
+
+	&__chevron,
+	&__icon,
+	&__menu {
+		font-size: 19px;
+		color: rgba( 238, 244, 255, 0.72 );
+	}
+
+	&.is-collapsed &__chevron {
+		transform: rotate( -90deg );
+	}
+
+	&__title {
+		font-size: 14px;
+		font-weight: 700;
+		color: #eef4ff;
+	}
+
+	&__spacer {
+		flex: 1;
+	}
+
+	&__body {
+		padding: 10px 13px 14px;
+		border-top: 1px solid rgba( 255, 255, 255, 0.06 );
+	}
+}

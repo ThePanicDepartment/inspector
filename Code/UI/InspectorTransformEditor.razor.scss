@@ -1,0 +1,23 @@
+.inspector-transform-grid {
+	display: grid;
+	grid-template-columns: 108px 18px 1fr 18px 1fr 18px 1fr;
+	align-items: center;
+	gap: 4px;
+	height: 18px;
+	margin-bottom: 2px;
+	font-size: 11px;
+	font-weight: 800;
+	text-align: center;
+
+	.axis-x {
+		color: #ff5d4d;
+	}
+
+	.axis-y {
+		color: #5edb7d;
+	}
+
+	.axis-z {
+		color: #6292ff;
+	}
+}

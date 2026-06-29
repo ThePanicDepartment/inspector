@@ -1,0 +1,38 @@
+@namespace Inspector.UI
+@using Inspector
+@inherits Panel
+
+<root class="inspector-shell">
+	<div class="inspector-shell__header">
+		<div class="inspector-shell__title">
+			<i>deployed_code</i>
+			<span>Inspector</span>
+		</div>
+		<div class="inspector-shell__actions">
+			<button class="icon-button @(Service.IsPinned ? "is-active" : "")" @onclick="@Service.TogglePinned" title="Pin"><i>push_pin</i></button>
+			<button class="icon-button" @onclick="@Close" title="Close"><i>close</i></button>
+		</div>
+	</div>
+
+	<InspectorObjectPicker Service="@Service" />
+	<InspectorSearchBox Service="@Service" Placeholder="@SearchPlaceholder" />
+	<InspectorTabs Service="@Service" />
+
+	<div class="inspector-shell__body">
+		@switch ( Service.ActiveRoute )
+		{
+			case InspectorRoute.Inspect:
+				<InspectorInspectView Service="@Service" />
+				break;
+			case InspectorRoute.Hierarchy:
+				<InspectorHierarchyView Service="@Service" />
+				break;
+			case InspectorRoute.Watch:
+				<InspectorWatchView Service="@Service" />
+				break;
+			case InspectorRoute.Network:
+				<InspectorNetworkView Service="@Service" />
+				break;
+		}
+	</div>
+</root>

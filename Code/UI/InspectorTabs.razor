@@ -1,0 +1,12 @@
+@namespace Inspector.UI
+@using Inspector
+@inherits Panel
+
+<root class="inspector-tabs">
+	@foreach ( var route in Routes )
+	{
+		<button class="inspector-tabs__tab @(Service.ActiveRoute == route ? "is-active" : "")" @onclick="@(() => Service.Navigate( route ))">
+			@LabelFor( route )
+		</button>
+	}
+</root>

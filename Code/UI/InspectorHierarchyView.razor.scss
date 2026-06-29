@@ -1,0 +1,125 @@
+.inspector-hierarchy-toolbar {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	height: 46px;
+
+	.inspector-breadcrumb {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		color: rgba( 238, 244, 255, 0.7 );
+		font-size: 14px;
+	}
+
+	button {
+		width: 38px;
+		height: 32px;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba( 255, 255, 255, 0.08 );
+		border: 1px solid rgba( 210, 225, 245, 0.11 );
+		border-radius: 7px;
+		color: rgba( 238, 244, 255, 0.78 );
+	}
+}
+
+.inspector-recent {
+	margin-bottom: 10px;
+	padding: 10px;
+	background-color: rgba( 255, 255, 255, 0.06 );
+	border: 1px solid rgba( 210, 225, 245, 0.1 );
+	border-radius: 7px;
+
+	&__title {
+		margin-bottom: 7px;
+		color: rgba( 238, 244, 255, 0.68 );
+		font-size: 12px;
+	}
+
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px;
+
+		button {
+			height: 27px;
+			padding: 0 10px;
+			background-color: rgba( 255, 255, 255, 0.08 );
+			border: 1px solid rgba( 210, 225, 245, 0.1 );
+			border-radius: 6px;
+			color: rgba( 238, 244, 255, 0.82 );
+			font-size: 12px;
+		}
+	}
+}
+
+.inspector-filter-tabs {
+	display: flex;
+	gap: 6px;
+	margin-bottom: 8px;
+
+	button {
+		height: 32px;
+		padding: 0 12px;
+		background-color: rgba( 255, 255, 255, 0.06 );
+		border: 1px solid rgba( 210, 225, 245, 0.1 );
+		border-radius: 6px;
+		color: rgba( 238, 244, 255, 0.72 );
+
+		&.is-active {
+			background-color: rgba( 91, 140, 255, 0.64 );
+			color: #ffffff;
+		}
+	}
+}
+
+.inspector-hierarchy-tree {
+	flex: 1;
+	min-height: 0;
+	overflow-y: scroll;
+	border: 1px solid rgba( 210, 225, 245, 0.1 );
+	border-radius: 7px;
+}
+
+.inspector-hierarchy-row {
+	height: 32px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	border-bottom: 1px solid rgba( 255, 255, 255, 0.045 );
+	color: rgba( 238, 244, 255, 0.82 );
+	font-size: 13px;
+
+	&:hover {
+		background-color: rgba( 255, 255, 255, 0.06 );
+	}
+
+	&.is-selected {
+		background-color: rgba( 91, 140, 255, 0.2 );
+		border: 1px solid rgba( 91, 140, 255, 0.8 );
+		color: #91b0ff;
+	}
+
+	i {
+		font-size: 18px;
+	}
+
+	.muted {
+		color: rgba( 238, 244, 255, 0.58 );
+	}
+
+	.spacer {
+		flex: 1;
+	}
+}
+
+.inspector-view-footer {
+	height: 34px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	color: rgba( 238, 244, 255, 0.48 );
+	font-size: 12px;
+}

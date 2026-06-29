@@ -1,0 +1,8 @@
+@namespace Inspector.UI
+@using Sandbox.UI
+@inherits Panel
+
+<root class="inspector-search">
+	<i>search</i>
+	<TextEntry class="inspector-search__entry" Placeholder="@Placeholder" Value="@Service.SearchText" OnTextEdited="@Service.SetSearchText" />
+</root>

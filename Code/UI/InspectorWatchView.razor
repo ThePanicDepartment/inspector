@@ -1,0 +1,51 @@
+@namespace Inspector.UI
+@using Inspector.Watch
+@inherits Panel
+
+<root class="inspector-view inspector-watch-view">
+	@if ( Service.WatchMetrics.Count == 0 )
+	{
+		<InspectorEmptyState Icon="monitoring" Message="Add watch values from selected properties." />
+	}
+	else
+	{
+		<div class="inspector-watch-overview">
+			@foreach ( var metric in Service.WatchMetrics.Take( 4 ) )
+			{
+				<div class="inspector-watch-card">
+					<div class="label">@metric.Name</div>
+					<div class="value" style="color: @metric.Accent.Hex">@metric.FormatValue()</div>
+					<svg class="sparkline" viewBox="0 0 100 100">
+						<polyline points="@metric.Samples.ToSparklinePath()" style="stroke: @metric.Accent.Hex" />
+					</svg>
+				</div>
+			}
+		</div>
+
+		@foreach ( var group in GroupedMetrics )
+		{
+			<InspectorSection Title="@group.Key" Icon="@IconForGroup( group.Key )">
+				<ChildContent>
+					@foreach ( var metric in group )
+					{
+						<div class="inspector-watch-row">
+							<i class="pin">push_pin</i>
+							<div class="name">@metric.Name</div>
+							<div class="value">@metric.FormatValue()</div>
+							<svg class="sparkline" viewBox="0 0 100 100">
+								<polyline points="@metric.Samples.ToSparklinePath()" style="stroke: @metric.Accent.Hex" />
+							</svg>
+							<div class="status" style="background-color: @metric.Accent.Hex"></div>
+							<i class="menu">more_horiz</i>
+						</div>
+					}
+				</ChildContent>
+			</InspectorSection>
+		}
+
+		<button class="inspector-bottom-button">
+			<i>add</i>
+			<span>Add Watch</span>
+		</button>
+	}
+</root>

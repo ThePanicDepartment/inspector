@@ -1,0 +1,20 @@
+@namespace Inspector.UI
+@inherits Panel
+
+<InspectorSection Title="Transform" Icon="open_with">
+	<ChildContent>
+		<div class="inspector-transform-grid">
+			<div></div>
+			<div class="axis-x">X</div>
+			<div></div>
+			<div class="axis-y">Y</div>
+			<div></div>
+			<div class="axis-z">Z</div>
+			<div></div>
+		</div>
+
+		<InspectorVector3Row Label="Position" Value="@Position" ValueChanged="@SetPosition" />
+		<InspectorVector3Row Label="Rotation" Value="@RotationAngles" ValueChanged="@SetRotationAngles" />
+		<InspectorVector3Row Label="Scale" Value="@Scale" ValueChanged="@SetScale" />
+	</ChildContent>
+</InspectorSection>

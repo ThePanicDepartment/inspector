@@ -1,0 +1,28 @@
+@namespace Inspector.UI
+@using Sandbox.UI
+@inherits Panel
+
+<root class="inspector-view inspector-inspect-view">
+	@if ( !Selected.IsValid() )
+	{
+		<InspectorEmptyState Icon="ads_click" Message="Select a GameObject to inspect." />
+	}
+	else
+	{
+		<InspectorTransformEditor Target="@Selected" />
+
+		@foreach ( var component in Components )
+		{
+			<InspectorSection Title="@ComponentTitle( component )" Icon="@ComponentIcon( component )">
+				<ChildContent>
+					<ControlSheet Target="@component" />
+				</ChildContent>
+			</InspectorSection>
+		}
+
+		<button class="inspector-bottom-button">
+			<i>add</i>
+			<span>Add Component</span>
+		</button>
+	}
+</root>

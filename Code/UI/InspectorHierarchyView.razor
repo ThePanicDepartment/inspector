@@ -1,0 +1,49 @@
+@namespace Inspector.UI
+@using Inspector.Hierarchy
+@inherits Panel
+
+<root class="inspector-view inspector-hierarchy-view">
+	<div class="inspector-hierarchy-toolbar">
+		<div class="inspector-breadcrumb">s&box <i>chevron_right</i> Scene</div>
+		<button><i>search</i></button>
+		<button><i>filter_alt</i></button>
+		<button><i>add</i></button>
+	</div>
+
+	@if ( Service.RecentSelections.Items.Count > 0 )
+	{
+		<div class="inspector-recent">
+			<div class="inspector-recent__title">Recent Selections</div>
+			<div class="inspector-recent__items">
+				@foreach ( var item in Service.RecentSelections.Items )
+				{
+					<button @onclick="@(() => Service.Select( item ))">@item.Name</button>
+				}
+			</div>
+		</div>
+	}
+
+	<div class="inspector-filter-tabs">
+		@foreach ( var filter in Filters )
+		{
+			<button class="@(filter == ActiveFilter ? "is-active" : "")" @onclick="@(() => ActiveFilter = filter)">@filter</button>
+		}
+	</div>
+
+	<div class="inspector-hierarchy-tree">
+		@foreach ( var node in Nodes )
+		{
+			<div class="inspector-hierarchy-row @(Service.SelectedGameObject == node.GameObject ? "is-selected" : "")" style="padding-left: @(10 + node.Depth * 18)px" @onclick="@(() => Service.Select( node.GameObject ))">
+				<i>@IconFor( node.GameObject )</i>
+				<span>@node.GameObject.Name</span>
+				<div class="spacer"></div>
+				<i class="muted">visibility</i>
+				<i class="muted">lock_open</i>
+			</div>
+		}
+	</div>
+
+	<div class="inspector-view-footer">
+		<span>@Nodes.Count items</span>
+	</div>
+</root>

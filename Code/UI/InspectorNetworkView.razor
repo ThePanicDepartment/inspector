@@ -1,0 +1,82 @@
+@namespace Inspector.UI
+@inherits Panel
+
+<root class="inspector-view inspector-network-view">
+	<InspectorSection Title="Network Overview" Icon="lan">
+		<ChildContent>
+			<div class="inspector-network-grid">
+				<div class="label">Peers</div>
+				<div class="value">@Snapshot.PeerCount</div>
+				<div class="label">Host</div>
+				<div class="value badge @(Snapshot.HasHost ? "good" : "warn")">@(Snapshot.HasHost ? "Active" : "Missing")</div>
+				<div class="label">Local</div>
+				<div class="value badge @(Snapshot.HasLocalConnection ? "good" : "warn")">@(Snapshot.HasLocalConnection ? "Connected" : "Offline")</div>
+				<div class="label">Replication</div>
+				<div class="value badge good">Runtime</div>
+			</div>
+
+			<div class="inspector-network-metrics">
+				<div>
+					<span>Bandwidth In</span>
+					<strong>@(Snapshot.BytesInPerSecond / 1024f).ToString( "0.00" ) KB/s</strong>
+				</div>
+				<div>
+					<span>Bandwidth Out</span>
+					<strong>@(Snapshot.BytesOutPerSecond / 1024f).ToString( "0.00" ) KB/s</strong>
+				</div>
+				<div>
+					<span>Packets In</span>
+					<strong>@Snapshot.PacketsInPerSecond.ToString( "0.0" ) /s</strong>
+				</div>
+				<div>
+					<span>Packets Out</span>
+					<strong>@Snapshot.PacketsOutPerSecond.ToString( "0.0" ) /s</strong>
+				</div>
+			</div>
+		</ChildContent>
+	</InspectorSection>
+
+	<InspectorSection Title="Client Comparison" Icon="groups">
+		<ChildContent>
+			<div class="inspector-network-table">
+				<div class="head">Property</div>
+				<div class="head">Local</div>
+				<div class="head">Host</div>
+				<div class="head">Delta</div>
+				<div>Position</div>
+				<div>@PositionText</div>
+				<div>@PositionText</div>
+				<div class="ok">0 ms</div>
+				<div>Rotation</div>
+				<div>@RotationText</div>
+				<div>@RotationText</div>
+				<div class="ok">0 ms</div>
+				<div>Authority</div>
+				<div>@AuthorityText</div>
+				<div>@(Snapshot.HasHost ? "Host" : "None")</div>
+				<div class="ok">Live</div>
+			</div>
+		</ChildContent>
+	</InspectorSection>
+
+	<InspectorSection Title="Replication Graph" Icon="timeline">
+		<ChildContent>
+			<div class="inspector-replication-bars">
+				@for ( var i = 0; i < 48; i++ )
+				{
+					<div class="@BarClass( i )"></div>
+				}
+			</div>
+			<div class="inspector-network-legend">
+				<span><b class="sent"></b>Sent</span>
+				<span><b class="acked"></b>Acked</span>
+				<span><b class="dropped"></b>Dropped</span>
+			</div>
+		</ChildContent>
+	</InspectorSection>
+
+	<button class="inspector-bottom-button">
+		<i>add</i>
+		<span>Add Component</span>
+	</button>
+</root>

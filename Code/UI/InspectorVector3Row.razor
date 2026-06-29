@@ -1,0 +1,12 @@
+@namespace Inspector.UI
+@inherits Panel
+
+<root class="inspector-vector-row">
+	<div class="inspector-vector-row__label">@Label</div>
+	<div class="inspector-vector-row__axis axis-x">@XLabel</div>
+	<InspectorNumberInput Value="@Value.x" ValueChanged="@SetX" />
+	<div class="inspector-vector-row__axis axis-y">@YLabel</div>
+	<InspectorNumberInput Value="@Value.y" ValueChanged="@SetY" />
+	<div class="inspector-vector-row__axis axis-z">@ZLabel</div>
+	<InspectorNumberInput Value="@Value.z" ValueChanged="@SetZ" />
+</root>

@@ -1,0 +1,82 @@
+.inspector-shell {
+	$accent: #5b8cff;
+	$panel: rgba( 13, 18, 24, 0.82 );
+	$surface: rgba( 255, 255, 255, 0.065 );
+	$surface-strong: rgba( 255, 255, 255, 0.11 );
+	$border: rgba( 190, 210, 235, 0.18 );
+
+	position: absolute;
+	top: 24px;
+	right: 28px;
+	width: 604px;
+	max-width: calc( 100vw - 56px );
+	height: calc( 100vh - 52px );
+	pointer-events: all;
+	display: flex;
+	flex-direction: column;
+	background-color: $panel;
+	backdrop-filter: blur( 22px );
+	border: 1px solid $border;
+	border-radius: 18px;
+	box-shadow: 0 18px 80px rgba( 0, 0, 0, 0.4 );
+	overflow: hidden;
+	transition: opacity 0.12s ease, transform 0.12s ease;
+
+	&__header {
+		min-height: 64px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 18px;
+		border-bottom: 1px solid rgba( 255, 255, 255, 0.08 );
+	}
+
+	&__title {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 19px;
+		font-weight: 700;
+
+		i {
+			font-size: 24px;
+			color: #ffffff;
+		}
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+
+	&__body {
+		flex: 1;
+		min-height: 0;
+		display: flex;
+		flex-direction: column;
+		padding: 0 14px 14px;
+		overflow: hidden;
+	}
+
+	.icon-button {
+		width: 34px;
+		height: 34px;
+		align-items: center;
+		justify-content: center;
+		background-color: transparent;
+		border: 0;
+		color: rgba( 238, 244, 255, 0.78 );
+		border-radius: 8px;
+
+		&:hover,
+		&.is-active {
+			background-color: $surface;
+			color: #ffffff;
+		}
+
+		i {
+			font-size: 20px;
+		}
+	}
+}

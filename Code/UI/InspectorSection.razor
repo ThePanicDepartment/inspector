@@ -1,0 +1,21 @@
+@namespace Inspector.UI
+@inherits Panel
+
+<root class="inspector-section @(Collapsed ? "is-collapsed" : "")">
+	<div class="inspector-section__header" @onclick="@Toggle">
+		<i class="inspector-section__chevron">keyboard_arrow_down</i>
+		@if ( !string.IsNullOrWhiteSpace( Icon ) )
+		{
+			<i class="inspector-section__icon">@Icon</i>
+		}
+		<div class="inspector-section__title">@Title</div>
+		<div class="inspector-section__spacer"></div>
+		<i class="inspector-section__menu">more_horiz</i>
+	</div>
+	@if ( !Collapsed )
+	{
+		<div class="inspector-section__body">
+			@ChildContent
+		</div>
+	}
+</root>

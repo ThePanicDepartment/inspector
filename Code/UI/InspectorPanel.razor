@@ -1,0 +1,10 @@
+@namespace Inspector.UI
+@inherits SingletonPanelComponent<InspectorPanel>
+
+<root class="inspector-runtime @(Service?.IsOpen == true ? "is-open" : "is-closed")">
+	@if ( Service is not null )
+	{
+		<InspectorGizmoToolbar Service="@Service" />
+		<InspectorShell Service="@Service" />
+	}
+</root>
