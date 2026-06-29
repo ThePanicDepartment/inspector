@@ -12,8 +12,11 @@ public sealed class InspectorPropertyDescriptorProviderTests
 	public void GetKindMapsSupportedTypes()
 	{
 		Assert.AreEqual( InspectorPropertyKind.Boolean, InspectorPropertyDescriptorProvider.GetKind( typeof( bool ) ) );
+		Assert.AreEqual( InspectorPropertyKind.Integer, InspectorPropertyDescriptorProvider.GetKind( typeof( int ) ) );
+		Assert.AreEqual( InspectorPropertyKind.Guid, InspectorPropertyDescriptorProvider.GetKind( typeof( System.Guid ) ) );
 		Assert.AreEqual( InspectorPropertyKind.Float, InspectorPropertyDescriptorProvider.GetKind( typeof( float ) ) );
 		Assert.AreEqual( InspectorPropertyKind.Vector3, InspectorPropertyDescriptorProvider.GetKind( typeof( Vector3 ) ) );
+		Assert.AreEqual( InspectorPropertyKind.Rotation, InspectorPropertyDescriptorProvider.GetKind( typeof( Rotation ) ) );
 		Assert.AreEqual( InspectorPropertyKind.GameObject, InspectorPropertyDescriptorProvider.GetKind( typeof( GameObject ) ) );
 	}
 
@@ -33,5 +36,25 @@ public sealed class InspectorPropertyDescriptorProviderTests
 			Assert.IsTrue( first.Count > 0 );
 			Assert.IsTrue( first.Any( x => x.Name == nameof( GameObject.Name ) ) );
 		}
+	}
+
+	[TestMethod]
+	public void GetDescriptorsOnlyReturnsPropertyAttributeMembers()
+	{
+		var provider = new InspectorPropertyDescriptorProvider();
+		var target = new PropertyAttributeTestComponent();
+
+		var descriptors = provider.GetDescriptors( target );
+
+		Assert.IsTrue( descriptors.Any( x => x.Name == nameof( PropertyAttributeTestComponent.VisibleValue ) ) );
+		Assert.IsFalse( descriptors.Any( x => x.Name == nameof( PropertyAttributeTestComponent.HiddenValue ) ) );
+	}
+
+	private sealed class PropertyAttributeTestComponent : Component
+	{
+		[Property]
+		public float VisibleValue { get; set; }
+
+		public float HiddenValue { get; set; }
 	}
 }

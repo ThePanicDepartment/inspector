@@ -15,7 +15,12 @@
 		{
 			<InspectorSection Title="@ComponentTitle( component )" Icon="@ComponentIcon( component )">
 				<ChildContent>
-					<ControlSheet Target="@component" />
+					@foreach ( var descriptor in CustomDescriptors( component ) )
+					{
+						<InspectorPropertyEditor Descriptor="@descriptor" />
+					}
+
+					<ControlSheet Target="@component" PropertyFilter="@ShouldShowControlSheetProperty" />
 				</ChildContent>
 			</InspectorSection>
 		}

@@ -8,9 +8,11 @@
 				<div class="label">Peers</div>
 				<div class="value">@Snapshot.PeerCount</div>
 				<div class="label">Host</div>
-				<div class="value badge @(Snapshot.HasHost ? "good" : "warn")">@(Snapshot.HasHost ? "Active" : "Missing")</div>
+				<div
+					class="value badge @( Snapshot.HasHost ? "good" : "warn" )">@( Snapshot.HasHost ? "Active" : "Missing" )</div>
 				<div class="label">Local</div>
-				<div class="value badge @(Snapshot.HasLocalConnection ? "good" : "warn")">@(Snapshot.HasLocalConnection ? "Connected" : "Offline")</div>
+				<div
+					class="value badge @( Snapshot.HasLocalConnection ? "good" : "warn" )">@( Snapshot.HasLocalConnection ? "Connected" : "Offline" )</div>
 				<div class="label">Replication</div>
 				<div class="value badge good">Runtime</div>
 			</div>
@@ -18,11 +20,11 @@
 			<div class="inspector-network-metrics">
 				<div>
 					<span>Bandwidth In</span>
-					<strong>@(Snapshot.BytesInPerSecond / 1024f).ToString( "0.00" ) KB/s</strong>
+					<strong>@( (Snapshot.BytesInPerSecond / 1024f).ToString( "0.00" ) ) KB/s</strong>
 				</div>
 				<div>
 					<span>Bandwidth Out</span>
-					<strong>@(Snapshot.BytesOutPerSecond / 1024f).ToString( "0.00" ) KB/s</strong>
+					<strong>@( (Snapshot.BytesOutPerSecond / 1024f).ToString( "0.00" ) ) KB/s</strong>
 				</div>
 				<div>
 					<span>Packets In</span>
@@ -38,32 +40,32 @@
 
 	<InspectorSection Title="Client Comparison" Icon="groups">
 		<ChildContent>
-		<div class="inspector-network-table">
-			<div class="inspector-network-table-row is-head">
-				<div class="property">Property</div>
-				<div class="wide">Local</div>
-				<div class="wide">Host</div>
-				<div class="delta">Delta</div>
+			<div class="inspector-network-table">
+				<div class="inspector-network-table-row is-head">
+					<div class="property">Property</div>
+					<div class="wide">Local</div>
+					<div class="wide">Host</div>
+					<div class="delta">Delta</div>
+				</div>
+				<div class="inspector-network-table-row">
+					<div class="property">Position</div>
+					<div class="wide">@PositionText</div>
+					<div class="wide">@PositionText</div>
+					<div class="delta ok">0 ms</div>
+				</div>
+				<div class="inspector-network-table-row">
+					<div class="property">Rotation</div>
+					<div class="wide">@RotationText</div>
+					<div class="wide">@RotationText</div>
+					<div class="delta ok">0 ms</div>
+				</div>
+				<div class="inspector-network-table-row">
+					<div class="property">Authority</div>
+					<div class="wide">@AuthorityText</div>
+					<div class="wide">@( Snapshot.HasHost ? "Host" : "None" )</div>
+					<div class="delta ok">Live</div>
+				</div>
 			</div>
-			<div class="inspector-network-table-row">
-				<div class="property">Position</div>
-				<div class="wide">@PositionText</div>
-				<div class="wide">@PositionText</div>
-				<div class="delta ok">0 ms</div>
-			</div>
-			<div class="inspector-network-table-row">
-				<div class="property">Rotation</div>
-				<div class="wide">@RotationText</div>
-				<div class="wide">@RotationText</div>
-				<div class="delta ok">0 ms</div>
-			</div>
-			<div class="inspector-network-table-row">
-				<div class="property">Authority</div>
-				<div class="wide">@AuthorityText</div>
-				<div class="wide">@(Snapshot.HasHost ? "Host" : "None")</div>
-				<div class="delta ok">Live</div>
-			</div>
-		</div>
 		</ChildContent>
 	</InspectorSection>
 

@@ -1,11 +1,22 @@
 .inspector-watch-view {
+	position: relative;
+	width: 100%;
+	flex: 1;
+	min-height: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
 	gap: 10px;
+	overflow-y: auto;
+	padding-top: 6px;
+	white-space: nowrap;
 }
 
 .inspector-watch-overview-header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	width: 100%;
 	padding: 0 4px 2px;
 	color: rgba( 238, 244, 255, 0.78 );
 	font-size: 13px;
@@ -13,6 +24,7 @@
 
 	button {
 		width: 24px;
+		min-width: 24px;
 		height: 24px;
 		display: flex;
 		align-items: center;
@@ -26,35 +38,39 @@
 .inspector-watch-overview {
 	display: flex;
 	gap: 8px;
+	width: 100%;
 	padding: 10px;
-	background:
-		linear-gradient( 180deg, rgba( 255, 255, 255, 0.04 ) 0%, rgba( 255, 255, 255, 0.02 ) 100% ),
-		rgba( 255, 255, 255, 0.03 );
+	background-color: rgba( 255, 255, 255, 0.03 );
 	border: 1px solid rgba( 210, 225, 245, 0.11 );
 	border-radius: 12px;
 }
 
 .inspector-watch-card {
+	width: 112px;
+	min-width: 112px;
 	min-height: 86px;
-	flex: 1;
-	min-width: 0;
+	flex-grow: 0;
+	flex-shrink: 0;
 	padding: 10px 10px 8px;
 	display: flex;
 	flex-direction: column;
 	gap: 4px;
-	background:
-		linear-gradient( 180deg, rgba( 10, 14, 20, 0.35 ) 0%, rgba( 255, 255, 255, 0.02 ) 100% );
+	background-color: rgba( 10, 14, 20, 0.28 );
 	border: 1px solid rgba( 210, 225, 245, 0.09 );
 	border-radius: 10px;
 
 	.label {
 		font-size: 11px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 		color: rgba( 238, 244, 255, 0.58 );
 	}
 
 	.value {
 		font-size: 16px;
 		font-weight: 800;
+		white-space: nowrap;
 	}
 }
 
@@ -68,8 +84,9 @@
 }
 
 .sparkline-bar {
-	width: 4px;
-	flex: 1 1 0;
+	width: 3px;
+	flex-grow: 0;
+	flex-shrink: 0;
 	min-width: 2px;
 	border-radius: 2px;
 	background-color: #4f8cff;
@@ -135,6 +152,7 @@
 }
 
 .inspector-watch-row {
+	width: 100%;
 	min-height: 34px;
 	display: flex;
 	align-items: center;
@@ -145,30 +163,40 @@
 	.pin,
 	.menu {
 		width: 24px;
+		min-width: 24px;
 		flex-shrink: 0;
 		font-size: 17px;
 		color: rgba( 238, 244, 255, 0.58 );
+		white-space: nowrap;
+		overflow: hidden;
 	}
 
 	.name {
-		flex: 1;
-		min-width: 0;
+		width: 132px;
+		min-width: 132px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 
 	.value {
 		width: 90px;
+		min-width: 90px;
 		flex-shrink: 0;
 		font-weight: 700;
 		color: #eef4ff;
+		white-space: nowrap;
 	}
 
 	.sparkline {
 		width: 126px;
+		min-width: 126px;
 		flex-shrink: 0;
 	}
 
 	.status {
 		width: 12px;
+		min-width: 12px;
 		height: 12px;
 		flex-shrink: 0;
 		border-radius: 50%;

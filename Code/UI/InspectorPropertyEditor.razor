@@ -1,0 +1,30 @@
+@namespace Inspector.UI
+@using Sandbox.UI
+@inherits Panel
+
+@if ( IsSupported )
+{
+	<root class="inspector-property-editor @KindClass">
+		<div class="inspector-property-editor-label">@Descriptor.DisplayName</div>
+
+		@if ( IsInteger )
+		{
+			<TextEntry class="inspector-property-editor-entry" Value="@IntText" OnTextEdited="@SetIntText" />
+		}
+		else if ( IsGuid )
+		{
+			<TextEntry class="inspector-property-editor-entry inspector-property-editor-guid" Value="@GuidText" OnTextEdited="@SetGuidText" />
+		}
+		else if ( IsRotation )
+		{
+			<div class="inspector-property-editor-rotation">
+				<div class="inspector-property-editor-axis axis-x">P</div>
+				<InspectorNumberInput Value="@RotationAngles.x" ValueChanged="@SetRotationPitch" />
+				<div class="inspector-property-editor-axis axis-y">Y</div>
+				<InspectorNumberInput Value="@RotationAngles.y" ValueChanged="@SetRotationYaw" />
+				<div class="inspector-property-editor-axis axis-z">R</div>
+				<InspectorNumberInput Value="@RotationAngles.z" ValueChanged="@SetRotationRoll" />
+			</div>
+		}
+	</root>
+}

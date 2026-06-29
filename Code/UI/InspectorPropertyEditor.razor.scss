@@ -1,0 +1,57 @@
+.inspector-property-editor {
+	min-height: 32px;
+	display: grid;
+	grid-template-columns: 112px minmax( 0, 1fr );
+	align-items: center;
+	gap: 8px;
+	color: rgba( 238, 244, 255, 0.72 );
+	font-size: 12px;
+
+	&.is-rotation {
+		grid-template-columns: 72px minmax( 0, 1fr );
+	}
+}
+
+.inspector-property-editor-label {
+	min-width: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.inspector-property-editor-entry {
+	width: 100%;
+	height: 31px;
+	display: flex;
+	align-items: center;
+	background-color: rgba( 6, 10, 16, 0.3 );
+	border: 1px solid rgba( 210, 225, 245, 0.12 );
+	border-radius: 6px;
+	color: #eef4ff;
+	font-size: 12px;
+	padding: 0 8px;
+}
+
+.inspector-property-editor-guid {
+	font-family: Consolas, monospace;
+	font-size: 11px;
+}
+
+.inspector-property-editor-rotation {
+	min-width: 0;
+	display: grid;
+	grid-template-columns: 18px minmax( 0, 1fr ) 18px minmax( 0, 1fr ) 18px minmax( 0, 1fr );
+	align-items: center;
+	gap: 5px;
+}
+
+.inspector-property-editor-axis {
+	height: 22px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+	background: rgba( 255, 255, 255, 0.06 );
+	font-size: 10px;
+	font-weight: 700;
+}

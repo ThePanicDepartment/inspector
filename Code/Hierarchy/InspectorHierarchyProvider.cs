@@ -32,8 +32,10 @@ public sealed class InspectorHierarchyProvider
 		var matches = string.IsNullOrWhiteSpace( search )
 			|| gameObject.Name.Contains( search, StringComparison.OrdinalIgnoreCase );
 
+		var hasChildren = gameObject.Children.Any( x => x.IsValid() );
+
 		if ( matches )
-			_nodes.Add( new( gameObject, depth ) );
+			_nodes.Add( new( gameObject, depth, hasChildren ) );
 
 		foreach ( var child in gameObject.Children )
 		{

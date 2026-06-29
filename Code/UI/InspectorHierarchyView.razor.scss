@@ -1,182 +1,188 @@
 .inspector-hierarchy-view {
-	gap: 10px;
+    position: relative;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    overflow: hidden;
+    padding-top: 6px;
+    white-space: nowrap;
 }
 
 .inspector-hierarchy-header {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	min-height: 36px;
-	padding: 0 2px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 36px;
+    padding: 0 2px;
 
-	.inspector-breadcrumb {
-		flex: 1;
-		display: flex;
-		align-items: center;
-		gap: 7px;
-		color: rgba( 238, 244, 255, 0.78 );
-		font-size: 13px;
-	}
+    .inspector-breadcrumb {
+        width: 348px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        white-space: nowrap;
+        overflow: hidden;
+        color: rgba(238, 244, 255, 0.78);
+        font-size: 13px;
+    }
 
-	button {
-		width: 36px;
-		height: 32px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background:
-			linear-gradient( 180deg, rgba( 255, 255, 255, 0.07 ) 0%, rgba( 255, 255, 255, 0.04 ) 100% );
-		border: 1px solid rgba( 210, 225, 245, 0.1 );
-		border-radius: 8px;
-		color: rgba( 238, 244, 255, 0.78 );
-	}
-}
-
-.inspector-hierarchy-toolbar {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	height: 46px;
-
-	.inspector-breadcrumb {
-		flex: 1;
-		display: flex;
-		align-items: center;
-		gap: 8px;
-		color: rgba( 238, 244, 255, 0.7 );
-		font-size: 14px;
-	}
-
-	button {
-		width: 38px;
-		height: 32px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background:
-			linear-gradient( 180deg, rgba( 255, 255, 255, 0.07 ) 0%, rgba( 255, 255, 255, 0.04 ) 100% );
-		border: 1px solid rgba( 210, 225, 245, 0.11 );
-		border-radius: 7px;
-		color: rgba( 238, 244, 255, 0.78 );
-	}
-}
-
-.inspector-recent {
-	padding: 10px;
-	background:
-		linear-gradient( 180deg, rgba( 255, 255, 255, 0.045 ) 0%, rgba( 255, 255, 255, 0.02 ) 100% ),
-		rgba( 255, 255, 255, 0.03 );
-	border: 1px solid rgba( 210, 225, 245, 0.1 );
-	border-radius: 12px;
-}
-
-.inspector-recent-title {
-	margin-bottom: 7px;
-	color: rgba( 238, 244, 255, 0.68 );
-	font-size: 12px;
-}
-
-.inspector-recent-items {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 6px;
-
-	button {
-		height: 27px;
-		padding: 0 10px;
-		background-color: rgba( 255, 255, 255, 0.08 );
-		border: 1px solid rgba( 210, 225, 245, 0.1 );
-		border-radius: 6px;
-		color: rgba( 238, 244, 255, 0.82 );
-		font-size: 12px;
-	}
+    button {
+        width: 36px;
+        min-width: 36px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(210, 225, 245, 0.1);
+        border-radius: 8px;
+        color: rgba(238, 244, 255, 0.78);
+    }
 }
 
 .inspector-filter-tabs {
-	display: flex;
-	gap: 6px;
-	margin-bottom: 2px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    margin-bottom: 2px;
+    overflow: hidden;
+}
 
-	button {
-		height: 32px;
-		padding: 0 12px;
-		background-color: rgba( 255, 255, 255, 0.06 );
-		border: 1px solid rgba( 210, 225, 245, 0.1 );
-		border-radius: 8px;
-		color: rgba( 238, 244, 255, 0.72 );
+.inspector-filter-tab {
+    min-width: 64px;
+    height: 32px;
+    padding: 0 10px;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(210, 225, 245, 0.1);
+    border-radius: 8px;
+    color: rgba(238, 244, 255, 0.72);
+    font-size: 12px;
+    white-space: nowrap;
 
-		&.is-active {
-			background-color: rgba( 91, 140, 255, 0.64 );
-			color: #ffffff;
-		}
-	}
+    &.is-active {
+        background-color: rgba(91, 140, 255, 0.64);
+        color: #ffffff;
+    }
 }
 
 .inspector-hierarchy-tree {
-	flex: 1;
-	min-height: 0;
-	overflow-y: scroll;
-	border: 1px solid rgba( 210, 225, 245, 0.1 );
-	border-radius: 12px;
-	background: rgba( 0, 0, 0, 0.12 );
+    width: 100%;
+    flex-grow: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 1px solid rgba(210, 225, 245, 0.1);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.12);
 }
 
 .inspector-hierarchy-row {
-	height: 33px;
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	border-bottom: 1px solid rgba( 255, 255, 255, 0.045 );
-	color: rgba( 238, 244, 255, 0.82 );
-	font-size: 13px;
+    width: 100%;
+    min-width: 100%;
+    height: 33px;
+    min-height: 33px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+    color: rgba(238, 244, 255, 0.82);
+    font-size: 13px;
 
-	&:hover {
-		background-color: rgba( 255, 255, 255, 0.06 );
-	}
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.06);
+    }
 
-	&.is-selected {
-		background-color: rgba( 91, 140, 255, 0.18 );
-		box-shadow: inset 0 0 0 1px rgba( 91, 140, 255, 0.72 );
-		color: #91b0ff;
-	}
+    &.is-selected {
+        background-color: rgba(91, 140, 255, 0.18);
+        box-shadow: inset 0 0 0 1px rgba(91, 140, 255, 0.72);
+        color: #91b0ff;
+    }
 
-	i {
-		font-size: 18px;
-	}
+    i {
+        width: 18px;
+        min-width: 18px;
+        font-size: 18px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
 
-	.muted {
-		color: rgba( 238, 244, 255, 0.58 );
-	}
+    .muted {
+        color: rgba(238, 244, 255, 0.58);
+    }
 
-	.spacer {
-		flex: 1;
-	}
+    .spacer {
+        flex-grow: 1;
+    }
+}
+
+.inspector-scene-row {
+    color: #eef4ff;
+    font-weight: 700;
+}
+
+.inspector-tree-toggle {
+    width: 18px;
+    min-width: 18px;
+    height: 24px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    color: rgba(238, 244, 255, 0.76);
+
+    i {
+        width: 18px;
+        min-width: 18px;
+        font-size: 18px;
+    }
+}
+
+.inspector-hierarchy-name {
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .inspector-view-footer {
-	height: 34px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	color: rgba( 238, 244, 255, 0.48 );
-	font-size: 12px;
+    width: 100%;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgba(238, 244, 255, 0.48);
+    font-size: 12px;
 
-	.inspector-footer-actions {
-		display: flex;
-		align-items: center;
-		gap: 10px;
-	}
+    .inspector-footer-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
 
-	button {
-		height: 28px;
-		padding: 0 12px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background: rgba( 255, 255, 255, 0.06 );
-		border: 1px solid rgba( 210, 225, 245, 0.08 );
-		border-radius: 999px;
-		color: rgba( 238, 244, 255, 0.76 );
-		font-size: 12px;
-	}
+    button {
+        min-width: 78px;
+        height: 28px;
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(210, 225, 245, 0.08);
+        border-radius: 999px;
+        color: rgba(238, 244, 255, 0.76);
+        font-size: 12px;
+        white-space: nowrap;
+    }
 }

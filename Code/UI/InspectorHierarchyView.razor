@@ -10,32 +10,39 @@
 		<button><i>add</i></button>
 	</div>
 
-	@if ( Service.RecentSelections.Items.Count > 0 )
-	{
-		<div class="inspector-recent">
-			<div class="inspector-recent-title">Recent Selections</div>
-			<div class="inspector-recent-items">
-				@foreach ( var item in Service.RecentSelections.Items )
-				{
-					<button @onclick="@(() => Service.Select( item ))">@item.Name</button>
-				}
-			</div>
-		</div>
-	}
-
 	<div class="inspector-filter-tabs">
 		@foreach ( var filter in Filters )
 		{
-			<button class="@(filter == ActiveFilter ? "is-active" : "")" @onclick="@(() => ActiveFilter = filter)">@filter</button>
+			<button class="inspector-filter-tab @(filter == ActiveFilter ? "is-active" : "")" @onclick="@(() => ActiveFilter = filter)">@filter</button>
 		}
 	</div>
 
 	<div class="inspector-hierarchy-tree">
+		<div class="inspector-hierarchy-row inspector-scene-row">
+			<button class="inspector-tree-toggle" @onclick="@ToggleScene">
+				<i>@(IsSceneExpanded ? "keyboard_arrow_down" : "keyboard_arrow_right")</i>
+			</button>
+			<i>deployed_code</i>
+			<span class="inspector-hierarchy-name">Scene</span>
+			<div class="spacer"></div>
+			<i class="muted">visibility</i>
+			<i class="muted">lock_open</i>
+		</div>
 		@foreach ( var node in Nodes )
 		{
-			<div class="inspector-hierarchy-row @(Service.SelectedGameObject == node.GameObject ? "is-selected" : "")" style="padding-left: @(10 + node.Depth * 18)px" @onclick="@(() => Service.Select( node.GameObject ))">
+			<div class="inspector-hierarchy-row @(Service.SelectedGameObject == node.GameObject ? "is-selected" : "")" style="padding-left: @(10 + (node.Depth + 1) * 18)px" @onclick="@(() => Service.Select( node.GameObject ))">
+				@if ( node.HasChildren )
+				{
+					<button class="inspector-tree-toggle" @onclick="@(() => ToggleNode( node ))">
+						<i>@(IsCollapsed( node.GameObject ) ? "keyboard_arrow_right" : "keyboard_arrow_down")</i>
+					</button>
+				}
+				else
+				{
+					<div class="inspector-tree-toggle"></div>
+				}
 				<i>@IconFor( node.GameObject )</i>
-				<span>@node.GameObject.Name</span>
+				<span class="inspector-hierarchy-name">@node.GameObject.Name</span>
 				<div class="spacer"></div>
 				<i class="muted">visibility</i>
 				<i class="muted">lock_open</i>

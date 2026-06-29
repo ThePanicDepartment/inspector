@@ -8,9 +8,7 @@
 	pointer-events: all;
 	display: flex;
 	flex-direction: column;
-	background:
-		linear-gradient( 180deg, rgba( 255, 255, 255, 0.05 ) 0%, rgba( 255, 255, 255, 0.02 ) 18%, rgba( 0, 0, 0, 0.08 ) 100% ),
-		rgba( 15, 20, 27, 0.84 );
+	background-color: rgba( 15, 20, 27, 0.7 );
 	backdrop-filter: blur( 26px ) saturate( 118% );
 	border: 1px solid rgba( 196, 214, 236, 0.14 );
 	border-radius: 22px;
@@ -23,16 +21,18 @@
 	min-height: 66px;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: flex-start;
 	padding: 0 18px 0 16px;
 	border-bottom: 1px solid rgba( 255, 255, 255, 0.08 );
-	background: linear-gradient( 180deg, rgba( 255, 255, 255, 0.03 ), rgba( 255, 255, 255, 0 ) );
+	background-color: rgba( 255, 255, 255, 0.02 );
 }
 
 .inspector-shell-title {
 	display: flex;
 	align-items: center;
 	gap: 10px;
+	flex-grow: 1;
+	justify-content: flex-start;
 	font-size: 18px;
 	font-weight: 700;
 	letter-spacing: 0.01em;
@@ -47,7 +47,9 @@
 .inspector-shell-actions {
 	display: flex;
 	align-items: center;
+	justify-content: flex-end;
 	gap: 6px;
+	flex-shrink: 0;
 }
 
 .inspector-shell-body {

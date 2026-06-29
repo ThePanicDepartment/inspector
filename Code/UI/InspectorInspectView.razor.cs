@@ -1,3 +1,5 @@
+using Inspector.Properties;
+
 namespace Inspector.UI;
 
 public partial class InspectorInspectView
@@ -24,6 +26,31 @@ public partial class InspectorInspectView
 		Light => "light_mode",
 		_ => "extension"
 	};
+
+	private IEnumerable<InspectorPropertyDescriptor> CustomDescriptors( Component component )
+	{
+		return Service.GetComponentDescriptors( component ).Where( IsCustomEditorDescriptor );
+	}
+
+	private static bool ShouldShowControlSheetProperty( SerializedProperty property )
+	{
+		if ( !InspectorPropertyDescriptorProvider.IsInspectableProperty( property ) )
+			return false;
+
+		return !IsCustomEditorType( property.PropertyType );
+	}
+
+	private static bool IsCustomEditorDescriptor( InspectorPropertyDescriptor descriptor )
+	{
+		return IsCustomEditorType( descriptor.PropertyType );
+	}
+
+	private static bool IsCustomEditorType( Type type )
+	{
+		return type == typeof( int ) ||
+			type == typeof( Guid ) ||
+			type == typeof( Rotation );
+	}
 
 	protected override int BuildHash()
 	{
