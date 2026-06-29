@@ -1,12 +1,13 @@
 .inspector-watch-overview {
-	display: grid;
-	grid-template-columns: repeat( 4, 1fr );
+	display: flex;
 	gap: 8px;
 	margin-bottom: 10px;
 }
 
 .inspector-watch-card {
 	height: 86px;
+	flex: 1;
+	min-width: 0;
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
@@ -40,8 +41,7 @@
 
 .inspector-watch-row {
 	height: 34px;
-	display: grid;
-	grid-template-columns: 24px 1fr 90px 126px 20px 26px;
+	display: flex;
 	align-items: center;
 	gap: 8px;
 	color: rgba( 238, 244, 255, 0.8 );
@@ -49,18 +49,33 @@
 
 	.pin,
 	.menu {
+		width: 24px;
+		flex-shrink: 0;
 		font-size: 17px;
 		color: rgba( 238, 244, 255, 0.58 );
 	}
 
+	.name {
+		flex: 1;
+		min-width: 0;
+	}
+
 	.value {
+		width: 90px;
+		flex-shrink: 0;
 		font-weight: 700;
 		color: #eef4ff;
+	}
+
+	.sparkline {
+		width: 126px;
+		flex-shrink: 0;
 	}
 
 	.status {
 		width: 12px;
 		height: 12px;
+		flex-shrink: 0;
 		border-radius: 50%;
 	}
 }

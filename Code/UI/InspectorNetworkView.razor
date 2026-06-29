@@ -38,24 +38,32 @@
 
 	<InspectorSection Title="Client Comparison" Icon="groups">
 		<ChildContent>
-			<div class="inspector-network-table">
-				<div class="head">Property</div>
-				<div class="head">Local</div>
-				<div class="head">Host</div>
-				<div class="head">Delta</div>
-				<div>Position</div>
-				<div>@PositionText</div>
-				<div>@PositionText</div>
-				<div class="ok">0 ms</div>
-				<div>Rotation</div>
-				<div>@RotationText</div>
-				<div>@RotationText</div>
-				<div class="ok">0 ms</div>
-				<div>Authority</div>
-				<div>@AuthorityText</div>
-				<div>@(Snapshot.HasHost ? "Host" : "None")</div>
-				<div class="ok">Live</div>
+		<div class="inspector-network-table">
+			<div class="inspector-network-table row is-head">
+				<div class="property">Property</div>
+				<div class="wide">Local</div>
+				<div class="wide">Host</div>
+				<div class="delta">Delta</div>
 			</div>
+			<div class="inspector-network-table row">
+				<div class="property">Position</div>
+				<div class="wide">@PositionText</div>
+				<div class="wide">@PositionText</div>
+				<div class="delta ok">0 ms</div>
+			</div>
+			<div class="inspector-network-table row">
+				<div class="property">Rotation</div>
+				<div class="wide">@RotationText</div>
+				<div class="wide">@RotationText</div>
+				<div class="delta ok">0 ms</div>
+			</div>
+			<div class="inspector-network-table row">
+				<div class="property">Authority</div>
+				<div class="wide">@AuthorityText</div>
+				<div class="wide">@(Snapshot.HasHost ? "Host" : "None")</div>
+				<div class="delta ok">Live</div>
+			</div>
+		</div>
 		</ChildContent>
 	</InspectorSection>
 

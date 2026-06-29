@@ -2,9 +2,9 @@
 @inherits SingletonPanelComponent<InspectorPanel>
 
 <root class="inspector-runtime @(Service?.IsOpen == true ? "is-open" : "is-closed")">
-	@if ( Service is not null )
+	@if ( CurrentService is not null )
 	{
-		<InspectorGizmoToolbar Service="@Service" />
-		<InspectorShell Service="@Service" />
+		<InspectorGizmoToolbar Service="@CurrentService" />
+		<InspectorShell Service="@CurrentService" />
 	}
 </root>

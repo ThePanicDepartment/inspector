@@ -1,6 +1,6 @@
 namespace Inspector.UI;
 
-public partial class InspectorTabs
+public partial class InspectorTabs : Panel
 {
 	private static readonly InspectorRoute[] Routes =
 	[

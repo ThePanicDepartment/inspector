@@ -32,13 +32,13 @@
 	border: 1px solid rgba( 210, 225, 245, 0.1 );
 	border-radius: 7px;
 
-	&__title {
+	&.title {
 		margin-bottom: 7px;
 		color: rgba( 238, 244, 255, 0.68 );
 		font-size: 12px;
 	}
 
-	&__items {
+	&.items {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 6px;

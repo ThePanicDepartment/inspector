@@ -3,12 +3,12 @@
 @inherits Panel
 
 <root class="inspector-shell">
-	<div class="inspector-shell__header">
-		<div class="inspector-shell__title">
+	<div class="inspector-shell header">
+		<div class="inspector-shell title">
 			<i>deployed_code</i>
 			<span>Inspector</span>
 		</div>
-		<div class="inspector-shell__actions">
+		<div class="inspector-shell actions">
 			<button class="icon-button @(Service.IsPinned ? "is-active" : "")" @onclick="@Service.TogglePinned" title="Pin"><i>push_pin</i></button>
 			<button class="icon-button" @onclick="@Close" title="Close"><i>close</i></button>
 		</div>
@@ -18,7 +18,7 @@
 	<InspectorSearchBox Service="@Service" Placeholder="@SearchPlaceholder" />
 	<InspectorTabs Service="@Service" />
 
-	<div class="inspector-shell__body">
+	<div class="inspector-shell body">
 		@switch ( Service.ActiveRoute )
 		{
 			case InspectorRoute.Inspect:

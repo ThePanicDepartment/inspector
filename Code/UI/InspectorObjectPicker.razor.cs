@@ -1,6 +1,6 @@
 namespace Inspector.UI;
 
-public partial class InspectorObjectPicker
+public partial class InspectorObjectPicker : Panel
 {
 	[Parameter, EditorRequired] public InspectorService Service { get; set; } = null!;
 

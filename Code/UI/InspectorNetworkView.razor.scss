@@ -1,15 +1,18 @@
 .inspector-network-grid {
-	display: grid;
-	grid-template-columns: 86px 1fr 86px 1fr;
-	gap: 8px 12px;
+	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
+	gap: 8px;
 
 	.label {
+		width: 86px;
+		flex-shrink: 0;
 		color: rgba( 238, 244, 255, 0.62 );
 		font-size: 12px;
 	}
 
 	.value {
+		width: 160px;
 		min-height: 26px;
 		align-items: center;
 		padding: 0 10px;
@@ -29,12 +32,13 @@
 }
 
 .inspector-network-metrics {
-	display: grid;
-	grid-template-columns: repeat( 2, 1fr );
-	gap: 8px 16px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
 	margin-top: 16px;
 
 	div {
+		width: 248px;
 		display: flex;
 		justify-content: space-between;
 		color: rgba( 238, 244, 255, 0.66 );
@@ -48,26 +52,46 @@
 }
 
 .inspector-network-table {
-	display: grid;
-	grid-template-columns: 1fr 1.35fr 1.35fr 64px;
+	display: flex;
+	flex-direction: column;
 	border: 1px solid rgba( 210, 225, 245, 0.1 );
 	border-radius: 6px;
 	overflow: hidden;
 	font-size: 12px;
 
-	div {
+	&.row {
+		display: flex;
+		min-height: 30px;
+		border-bottom: 1px solid rgba( 255, 255, 255, 0.055 );
+	}
+
+	&.row > div {
 		min-height: 30px;
 		align-items: center;
 		padding: 0 8px;
 		border-right: 1px solid rgba( 255, 255, 255, 0.055 );
-		border-bottom: 1px solid rgba( 255, 255, 255, 0.055 );
 		color: rgba( 238, 244, 255, 0.76 );
 	}
 
-	.head {
+	.is-head > div {
 		background-color: rgba( 255, 255, 255, 0.06 );
 		color: #eef4ff;
 		font-weight: 700;
+	}
+
+	.property {
+		width: 100px;
+		flex-shrink: 0;
+	}
+
+	.wide {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.delta {
+		width: 64px;
+		flex-shrink: 0;
 	}
 
 	.ok {

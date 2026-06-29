@@ -1,6 +1,5 @@
 .inspector-transform-grid {
-	display: grid;
-	grid-template-columns: 108px 18px 1fr 18px 1fr 18px 1fr;
+	display: flex;
 	align-items: center;
 	gap: 4px;
 	height: 18px;
@@ -8,6 +7,17 @@
 	font-size: 11px;
 	font-weight: 800;
 	text-align: center;
+
+	&.label {
+		width: 108px;
+		flex-shrink: 0;
+	}
+
+	&.group {
+		flex: 1;
+		min-width: 0;
+		justify-content: center;
+	}
 
 	.axis-x {
 		color: #ff5d4d;

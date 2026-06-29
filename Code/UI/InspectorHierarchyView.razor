@@ -13,8 +13,8 @@
 	@if ( Service.RecentSelections.Items.Count > 0 )
 	{
 		<div class="inspector-recent">
-			<div class="inspector-recent__title">Recent Selections</div>
-			<div class="inspector-recent__items">
+			<div class="inspector-recent title">Recent Selections</div>
+			<div class="inspector-recent items">
 				@foreach ( var item in Service.RecentSelections.Items )
 				{
 					<button @onclick="@(() => Service.Select( item ))">@item.Name</button>

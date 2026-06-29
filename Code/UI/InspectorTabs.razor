@@ -5,7 +5,7 @@
 <root class="inspector-tabs">
 	@foreach ( var route in Routes )
 	{
-		<button class="inspector-tabs__tab @(Service.ActiveRoute == route ? "is-active" : "")" @onclick="@(() => Service.Navigate( route ))">
+		<button class="inspector-tabs tab @(Service.ActiveRoute == route ? "is-active" : "")" @onclick="@(() => Service.Navigate( route ))">
 			@LabelFor( route )
 		</button>
 	}

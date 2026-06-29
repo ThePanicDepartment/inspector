@@ -1,16 +1,17 @@
 .inspector-runtime {
-	position: absolute;
-	inset: 0;
-	pointer-events: none;
-	font-family: Inter, "Segoe UI", sans-serif;
-	color: #eef4ff;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    font-family: Inter, "Segoe UI", sans-serif;
+    color: #eef4ff;
 
-	&.is-closed {
-		.inspector-shell,
-		.inspector-gizmo-toolbar {
-			opacity: 0;
-			pointer-events: none;
-			transform: translateX( 18px );
-		}
-	}
+    &.is-closed {
+
+        .inspector-shell,
+        .inspector-gizmo-toolbar {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateX(18px);
+        }
+    }
 }
