@@ -1,16 +1,19 @@
 .inspector-number {
 	min-width: 0;
+	flex: 1 1 auto;
+}
 
-	&.entry {
-		width: 100%;
-		height: 32px;
-		align-items: center;
-		justify-content: center;
-		background-color: rgba( 4, 8, 13, 0.34 );
-		border: 1px solid rgba( 210, 225, 245, 0.12 );
-		border-radius: 5px;
-		color: #eef4ff;
-		font-size: 13px;
-		text-align: center;
-	}
+.inspector-number-entry {
+	width: 100%;
+	height: 31px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background:
+		linear-gradient( 180deg, rgba( 6, 10, 16, 0.3 ) 0%, rgba( 6, 10, 16, 0.18 ) 100% );
+	border: 1px solid rgba( 210, 225, 245, 0.12 );
+	border-radius: 6px;
+	color: #eef4ff;
+	font-size: 12px;
+	text-align: center;
 }

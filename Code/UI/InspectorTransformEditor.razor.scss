@@ -1,23 +1,14 @@
 .inspector-transform-grid {
 	display: flex;
 	align-items: center;
-	gap: 4px;
-	height: 18px;
-	margin-bottom: 2px;
+	gap: 6px;
+	min-height: 18px;
+	margin: 0 0 8px;
+	padding-left: 88px;
 	font-size: 11px;
 	font-weight: 800;
 	text-align: center;
-
-	&.label {
-		width: 108px;
-		flex-shrink: 0;
-	}
-
-	&.group {
-		flex: 1;
-		min-width: 0;
-		justify-content: center;
-	}
+	opacity: 0.95;
 
 	.axis-x {
 		color: #ff5d4d;
@@ -30,4 +21,17 @@
 	.axis-z {
 		color: #6292ff;
 	}
+}
+
+.inspector-transform-grid-label {
+	width: 0;
+	min-width: 0;
+	flex-shrink: 0;
+}
+
+.inspector-transform-grid-group {
+	flex: 1 1 0;
+	min-width: 0;
+	display: flex;
+	justify-content: center;
 }

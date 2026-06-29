@@ -3,7 +3,7 @@
 @inherits Panel
 
 <root class="inspector-view inspector-hierarchy-view">
-	<div class="inspector-hierarchy-toolbar">
+	<div class="inspector-hierarchy-header">
 		<div class="inspector-breadcrumb">s&box <i>chevron_right</i> Scene</div>
 		<button><i>search</i></button>
 		<button><i>filter_alt</i></button>
@@ -13,8 +13,8 @@
 	@if ( Service.RecentSelections.Items.Count > 0 )
 	{
 		<div class="inspector-recent">
-			<div class="inspector-recent title">Recent Selections</div>
-			<div class="inspector-recent items">
+			<div class="inspector-recent-title">Recent Selections</div>
+			<div class="inspector-recent-items">
 				@foreach ( var item in Service.RecentSelections.Items )
 				{
 					<button @onclick="@(() => Service.Select( item ))">@item.Name</button>
@@ -44,6 +44,10 @@
 	</div>
 
 	<div class="inspector-view-footer">
+		<div class="inspector-footer-actions">
+			<button @onclick="@(() => Service.SetSearchText( string.Empty ))">Add Filter</button>
+			<button @onclick="@ResetFilters">Reset</button>
+		</div>
 		<span>@Nodes.Count items</span>
 	</div>
 </root>

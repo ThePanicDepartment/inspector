@@ -1,3 +1,7 @@
+.inspector-network-view {
+	gap: 10px;
+}
+
 .inspector-network-grid {
 	display: flex;
 	flex-wrap: wrap;
@@ -12,8 +16,9 @@
 	}
 
 	.value {
-		width: 160px;
+		width: 164px;
 		min-height: 26px;
+		display: flex;
 		align-items: center;
 		padding: 0 10px;
 		background-color: rgba( 0, 0, 0, 0.22 );
@@ -55,30 +60,33 @@
 	display: flex;
 	flex-direction: column;
 	border: 1px solid rgba( 210, 225, 245, 0.1 );
-	border-radius: 6px;
+	border-radius: 10px;
 	overflow: hidden;
 	font-size: 12px;
+}
 
-	&.row {
+.inspector-network-table-row {
+	display: flex;
+	min-height: 30px;
+	border-bottom: 1px solid rgba( 255, 255, 255, 0.055 );
+
+	> div {
+		min-height: 30px;
 		display: flex;
-		min-height: 30px;
-		border-bottom: 1px solid rgba( 255, 255, 255, 0.055 );
-	}
-
-	&.row > div {
-		min-height: 30px;
 		align-items: center;
 		padding: 0 8px;
 		border-right: 1px solid rgba( 255, 255, 255, 0.055 );
 		color: rgba( 238, 244, 255, 0.76 );
 	}
+}
 
-	.is-head > div {
-		background-color: rgba( 255, 255, 255, 0.06 );
-		color: #eef4ff;
-		font-weight: 700;
-	}
+.inspector-network-table-row.is-head > div {
+	background-color: rgba( 255, 255, 255, 0.06 );
+	color: #eef4ff;
+	font-weight: 700;
+}
 
+.inspector-network-table {
 	.property {
 		width: 100px;
 		flex-shrink: 0;

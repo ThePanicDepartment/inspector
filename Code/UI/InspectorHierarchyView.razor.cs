@@ -10,6 +10,11 @@ public partial class InspectorHierarchyView
 
 	private string ActiveFilter { get; set; } = "All";
 
+	private void ResetFilters()
+	{
+		ActiveFilter = "All";
+	}
+
 	private IReadOnlyList<InspectorHierarchyNode> Nodes => Service.Hierarchy.Build( Game.ActiveScene, Service.SearchText )
 		.Where( x => MatchesFilter( x.GameObject ) )
 		.ToArray();

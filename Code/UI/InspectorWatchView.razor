@@ -9,15 +9,22 @@
 	}
 	else
 	{
+		<div class="inspector-watch-overview-header">
+			<span>Live Overview</span>
+			<button title="More"><i>more_horiz</i></button>
+		</div>
 		<div class="inspector-watch-overview">
 			@foreach ( var metric in Service.WatchMetrics.Take( 4 ) )
 			{
 				<div class="inspector-watch-card">
 					<div class="label">@metric.Name</div>
-					<div class="value" style="color: @metric.Accent.Hex">@metric.FormatValue()</div>
-					<svg class="sparkline" viewBox="0 0 100 100">
-						<polyline points="@metric.Samples.ToSparklinePath()" style="stroke: @metric.Accent.Hex" />
-					</svg>
+					<div class="value @AccentClass( metric )">@metric.FormatValue()</div>
+					<div class="sparkline">
+						@foreach ( var barClass in SparklineBars( metric ) )
+						{
+							<div class="sparkline-bar @AccentClass( metric ) @barClass"></div>
+						}
+					</div>
 				</div>
 			}
 		</div>
@@ -32,10 +39,13 @@
 							<i class="pin">push_pin</i>
 							<div class="name">@metric.Name</div>
 							<div class="value">@metric.FormatValue()</div>
-							<svg class="sparkline" viewBox="0 0 100 100">
-								<polyline points="@metric.Samples.ToSparklinePath()" style="stroke: @metric.Accent.Hex" />
-							</svg>
-							<div class="status" style="background-color: @metric.Accent.Hex"></div>
+							<div class="sparkline">
+								@foreach ( var barClass in SparklineBars( metric ) )
+								{
+									<div class="sparkline-bar @AccentClass( metric ) @barClass"></div>
+								}
+							</div>
+							<div class="status @AccentClass( metric )"></div>
 							<i class="menu">more_horiz</i>
 						</div>
 					}

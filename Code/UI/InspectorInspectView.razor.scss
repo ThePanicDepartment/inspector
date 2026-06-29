@@ -1,26 +1,35 @@
 .inspector-view {
+	position: relative;
+	width: 100%;
 	flex: 1;
 	min-height: 0;
-	overflow-y: scroll;
-	padding-top: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	overflow-y: auto;
+	padding-top: 6px;
 }
 
 .inspector-bottom-button {
-	height: 44px;
+	flex: 0 0 auto;
+	min-height: 44px;
 	margin-top: 2px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	gap: 8px;
-	background-color: rgba( 255, 255, 255, 0.09 );
-	border: 1px solid rgba( 210, 225, 245, 0.13 );
-	border-radius: 8px;
-	color: #79a2ff;
+	background:
+		linear-gradient( 180deg, rgba( 91, 140, 255, 0.18 ) 0%, rgba( 255, 255, 255, 0.06 ) 100% );
+	border: 1px solid rgba( 91, 140, 255, 0.22 );
+	border-radius: 12px;
+	color: #89abff;
 	font-size: 14px;
 	font-weight: 600;
+	box-shadow: inset 0 1px 0 rgba( 255, 255, 255, 0.04 );
 
 	&:hover {
-		background-color: rgba( 91, 140, 255, 0.16 );
+		background:
+			linear-gradient( 180deg, rgba( 91, 140, 255, 0.24 ) 0%, rgba( 255, 255, 255, 0.08 ) 100% );
 		color: #ffffff;
 	}
 
@@ -31,4 +40,36 @@
 
 .inspector-section .controlsheet {
 	background: transparent;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.inspector-section .controlrow,
+.inspector-section .control-group {
+	min-height: 32px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: rgba( 238, 244, 255, 0.72 );
+	font-size: 12px;
+}
+
+.inspector-section textentry,
+.inspector-section .textentry,
+.inspector-section .text-entry,
+.inspector-section input {
+	min-height: 30px;
+	background:
+		linear-gradient( 180deg, rgba( 6, 10, 16, 0.3 ) 0%, rgba( 6, 10, 16, 0.18 ) 100% );
+	border: 1px solid rgba( 210, 225, 245, 0.12 );
+	border-radius: 6px;
+	color: #eef4ff;
+}
+
+.inspector-section button {
+	background: rgba( 255, 255, 255, 0.06 );
+	border: 1px solid rgba( 210, 225, 245, 0.1 );
+	border-radius: 6px;
+	color: rgba( 238, 244, 255, 0.82 );
 }

@@ -1,44 +1,44 @@
 .inspector-gizmo-toolbar {
 	position: absolute;
-	top: 36px;
+	top: 32px;
 	left: 50%;
 	transform: translateX( -50% );
 	pointer-events: all;
 	display: flex;
 	align-items: center;
 	gap: 4px;
-	padding: 7px;
+	padding: 6px;
 	background-color: rgba( 18, 23, 30, 0.78 );
 	backdrop-filter: blur( 18px );
 	border: 1px solid rgba( 215, 230, 250, 0.13 );
 	border-radius: 18px;
 	transition: opacity 0.12s ease, transform 0.12s ease;
+}
 
-	&.button {
-		height: 40px;
-		padding: 0 14px;
-		display: flex;
-		align-items: center;
-		gap: 8px;
-		background-color: transparent;
-		border: 0;
-		border-radius: 10px;
-		color: rgba( 238, 244, 255, 0.78 );
-		font-size: 14px;
+.inspector-gizmo-button {
+	height: 40px;
+	padding: 0 14px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	background-color: transparent;
+	border: 0;
+	border-radius: 10px;
+	color: rgba( 238, 244, 255, 0.78 );
+	font-size: 14px;
 
-		&:hover {
-			background-color: rgba( 255, 255, 255, 0.08 );
-			color: #ffffff;
-		}
+	&:hover {
+		background-color: rgba( 255, 255, 255, 0.08 );
+		color: #ffffff;
+	}
 
-		&.is-active {
-			background-color: rgba( 91, 140, 255, 0.78 );
-			color: #ffffff;
-			box-shadow: 0 0 24px rgba( 91, 140, 255, 0.32 );
-		}
+	&.is-active {
+		background-color: rgba( 91, 140, 255, 0.78 );
+		color: #ffffff;
+		box-shadow: 0 0 24px rgba( 91, 140, 255, 0.32 );
+	}
 
-		i {
-			font-size: 20px;
-		}
+	i {
+		font-size: 20px;
 	}
 }

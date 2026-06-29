@@ -1,32 +1,43 @@
 .inspector-vector-row {
 	display: flex;
+	align-items: stretch;
+	gap: 6px;
+	min-height: 40px;
+	flex: 0 0 auto;
+}
+
+.inspector-vector-row-label {
+	display: flex;
 	align-items: center;
+	color: rgba( 238, 244, 255, 0.72 );
+	font-size: 13px;
+	width: 86px;
+	flex-shrink: 0;
+}
+
+.inspector-vector-row-group {
+	flex: 1 1 0;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
 	gap: 4px;
-	min-height: 38px;
+}
 
-	&.label {
-		color: rgba( 238, 244, 255, 0.72 );
-		font-size: 13px;
-		width: 108px;
-		flex-shrink: 0;
-	}
+.inspector-vector-row-axis {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	flex-shrink: 0;
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: 0.02em;
+	line-height: 1;
+	height: 12px;
+}
 
-	&.group {
-		flex: 1;
-		min-width: 0;
-		display: flex;
-		align-items: center;
-		gap: 4px;
-	}
-
-	&.axis {
-		width: 18px;
-		flex-shrink: 0;
-		text-align: center;
-		font-size: 11px;
-		font-weight: 800;
-	}
-
+.inspector-vector-row {
 	.axis-x {
 		color: #ff5d4d;
 	}

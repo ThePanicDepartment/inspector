@@ -2,17 +2,17 @@
 @inherits Panel
 
 <root class="inspector-vector-row">
-	<div class="inspector-vector-row label">@Label</div>
-	<div class="inspector-vector-row group">
-		<div class="inspector-vector-row axis axis-x">@XLabel</div>
+	<div class="inspector-vector-row-label">@Label</div>
+	<div class="inspector-vector-row-group">
+		<div class="inspector-vector-row-axis axis-x">@XLabel</div>
 		<InspectorNumberInput Value="@Value.x" ValueChanged="@SetX" />
 	</div>
-	<div class="inspector-vector-row group">
-		<div class="inspector-vector-row axis axis-y">@YLabel</div>
+	<div class="inspector-vector-row-group">
+		<div class="inspector-vector-row-axis axis-y">@YLabel</div>
 		<InspectorNumberInput Value="@Value.y" ValueChanged="@SetY" />
 	</div>
-	<div class="inspector-vector-row group">
-		<div class="inspector-vector-row axis axis-z">@ZLabel</div>
+	<div class="inspector-vector-row-group">
+		<div class="inspector-vector-row-axis axis-z">@ZLabel</div>
 		<InspectorNumberInput Value="@Value.z" ValueChanged="@SetZ" />
 	</div>
 </root>

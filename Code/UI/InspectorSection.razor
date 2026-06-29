@@ -2,19 +2,19 @@
 @inherits Panel
 
 <root class="inspector-section @(Collapsed ? "is-collapsed" : "")">
-	<div class="inspector-section header" @onclick="@Toggle">
-		<i class="inspector-section chevron">keyboard_arrow_down</i>
+	<div class="inspector-section-header" @onclick="@Toggle">
+		<i class="inspector-section-chevron">keyboard_arrow_down</i>
 		@if ( !string.IsNullOrWhiteSpace( Icon ) )
 		{
-			<i class="inspector-section icon">@Icon</i>
+			<i class="inspector-section-icon">@Icon</i>
 		}
-		<div class="inspector-section title">@Title</div>
-		<div class="inspector-section spacer"></div>
-		<i class="inspector-section menu">more_horiz</i>
+		<div class="inspector-section-title">@Title</div>
+		<div class="inspector-section-spacer"></div>
+		<i class="inspector-section-menu">more_horiz</i>
 	</div>
 	@if ( !Collapsed )
 	{
-		<div class="inspector-section body">
+		<div class="inspector-section-body">
 			@ChildContent
 		</div>
 	}

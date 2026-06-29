@@ -1,15 +1,16 @@
 .inspector-empty-state {
 	flex: 1;
 	min-height: 180px;
+	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	gap: 10px;
 	color: rgba( 238, 244, 255, 0.54 );
-	font-size: 14px;
+	font-size: 13px;
 
 	i {
-		font-size: 34px;
+		font-size: 32px;
 		color: rgba( 91, 140, 255, 0.78 );
 	}
 }
